@@ -17,7 +17,6 @@ Use Case Diagram - Website Chia Sẻ Kiến Thức Về Chó Mèo
   - Admin
 - Use Cases:
   - Xem danh sách bài viết
-  - Xem chi tiết bài viết
 
 # V2: Đăng ký/Đăng nhập
 
@@ -37,6 +36,7 @@ Use Case Diagram - Website Chia Sẻ Kiến Thức Về Chó Mèo
   - Xem danh sách user
   - Khóa/mở khóa tài khoản user
   - Reset mật khẩu user
+  - Xoá bài viết
 
 # V4: Xóa nhiều bài viết cùng lúc
 
@@ -67,3 +67,6 @@ Use Case Diagram - Website Chia Sẻ Kiến Thức Về Chó Mèo
   - chạy file:./install.zsh hoặc zsh install.zsh
 
 # Link project đã triển khai của bạn
+
+- deploy bằng render
+  https://flask-tiny-app-4b9v.onrender.com
