@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng ký</title>
+  </head>
+  <body>
+    <h2>Đăng ký</h2>
+    <input type="text" id="newUser" placeholder="Nhập email" />
+    <input type="password" id="newPassword" placeholder="Nhập mật khẩu" />
+    <button onclick="register()">Đăng ký</button>
+
+    <p id="message"></p>
+
+    <script>
+      function register() {
+        let newUser = document.getElementById("newUser").value;
+        let newPassword = document.getElementById("newPassword").value;
+
+        fetch("/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: newUser, password: newPassword }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              document.getElementById("message").innerText =
+                "Đăng ký thành công! Chuyển hướng...";
+              setTimeout(() => (window.location.href = "/login"), 2000);
+            } else {
+              document.getElementById("message").innerText = data.message;
+            }
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </body>
+</html>

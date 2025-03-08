@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Danh sách bài viết</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quản lý Bài viết</h1>
+      <button onclick="window.location.href='/admin'">Quay lại Admin</button>
+      <table id="posts-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tiêu đề</th>
+            <th>Nội dung</th>
+            <th>Người đăng</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="posts-list">
+          <!-- Danh sách bài viết sẽ hiển thị ở đây -->
+        </tbody>
+      </table>
+    </div>
+    <script src="{{ url_for('static', filename='js/manager_post.js') }}"></script>
+  </body>
+</html>
